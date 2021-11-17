@@ -5,9 +5,9 @@
  */
 package Fuzzy.BaseConhecimento;
 
-import Model.ConjuntoAtivo;
-import Model.Instancia;
-import Model.Regra;
+import Fuzzy.Model.ConjuntoAtivo;
+import Fuzzy.Model.Instancia;
+import Fuzzy.Model.Regra;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

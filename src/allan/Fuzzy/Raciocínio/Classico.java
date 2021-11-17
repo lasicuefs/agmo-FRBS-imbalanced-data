@@ -5,8 +5,8 @@
  */
 package Fuzzy.Raciocínio;
 
-import Model.Instancia;
-import Model.Regra;
+import Fuzzy.Model.Instancia;
+import Fuzzy.Model.Regra;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -66,7 +66,7 @@ public class Classico {
         return this.acc();
     }
     
-    private double acc(){
+    public double acc(){
         Iterator gabarito = this.gabarito.iterator();
         Iterator resultado = this.resultadoClassificacao.iterator();
 
@@ -94,10 +94,14 @@ public class Classico {
             }
             numerador++;
         }
+        if (this.regras.size() < 2){
+            return 0;
+        }
+        //System.out.println(numerador + " - " + this.instancias.size()+" - "+this.regras.get(0).tamanhoInstancia());
         return 1 - (numerador/(this.instancias.size()* this.regras.get(0).tamanhoInstancia()));
     }
     
-    private double AUC(){
+    public double AUC(){
         Iterator gabarito = this.gabarito.iterator();
         Iterator resultado = this.resultadoClassificacao.iterator();
 
